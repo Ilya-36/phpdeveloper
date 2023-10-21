@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePostRequest;
+use App\Http\Services\ApartmenSearchService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class ApartmentController extends Controller
 {
-    public function index(Request $request)
+    private  $apartmen;
+    public function __construct(ApartmenSearchService $apartmenSearchService)
+    {
+        $this->apartmen = $apartmenSearchService;
+    }
+
+    public function index(StorePostRequest $request)
     {
         $query = DB::table('apartment');
 
@@ -35,6 +43,8 @@ class ApartmentController extends Controller
             $query->where('price', '<=', $priceMax);
         }
         $parameters = $query->get();
-        return response()->json($parameters);
+        $data = $this->apartmen->search();
+
+        return response()->json($data);
     }
 }
