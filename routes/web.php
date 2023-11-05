@@ -18,3 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/apartments', [App\Http\Controllers\ApartmentController::class, 'index']);
+
+Route::get('/kek', function () {
+    dd("lol");
+});

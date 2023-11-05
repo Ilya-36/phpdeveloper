@@ -2,6 +2,7 @@
 
 namespace App\Http\Services;
 
+use App\Http\DTO\ApartmentSearchDTO;
 use App\Http\Repositories\ApartmentRepositoryInterface;
 use Illuminate\Support\Collection;
 
@@ -14,8 +15,8 @@ class ApartmenSearchService
         $this->aparmentRepository = $apartmentRepository;
     }
 
-    public function search() : Collection
+    public function search(ApartmentSearchDTO $apartmentSearchDTO) : Collection
     {
-        return $this->aparmentRepository->searchApartments();
+        return $this->aparmentRepository->searchApartments($apartmentSearchDTO);
     }
 }
