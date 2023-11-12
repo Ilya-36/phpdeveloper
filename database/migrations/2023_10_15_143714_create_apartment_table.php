@@ -13,14 +13,14 @@ class CreateApartmentTable extends Migration
      */
     public function up()
     {
-        Schema::create('apartment', function (Blueprint $table) {
+        Schema::create('apartments', function (Blueprint $table) {
             $table->id();
-            $table->string('Name');
-            $table->integer('Price');
-            $table->integer('Bedrooms');
-            $table->integer('Bathrooms');
-            $table->integer('Storeys');
-            $table->integer('Garages');
+            $table->string('name');
+            $table->integer('price');
+            $table->integer('bedrooms');
+            $table->integer('bathrooms');
+            $table->integer('storeys');
+            $table->integer('garages');
             $table->timestamps();
         });
     }

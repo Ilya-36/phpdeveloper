@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\DB;
 
 class ApartmentController extends Controller
 {
-    private  $apartmen;
-    public function __construct(ApartmenSearchService $apartmenSearchService)
-    {
-        $this->apartmen = $apartmenSearchService;
-    }
+//    private  $apartment;
+//    public function __construct(ApartmentSearchService $apartmentSearchService)
+//    {
+//        $this->apartment = $apartmentSearchService;
+//    }
 
     public function index(StorePostRequest $request)
     {
@@ -43,8 +43,8 @@ class ApartmentController extends Controller
             $query->where('price', '<=', $priceMax);
         }
         $parameters = $query->get();
-        $data = $this->apartmen->search();
+//        $data = $this->apartment->search();
 
-        return response()->json($data);
+        return response()->json([]);
     }
 }

@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/apartments', [App\Http\Controllers\ApartmentController::class, 'index']);
+Route::get('/apartment', [App\Http\Controllers\ApartmentController::class, 'index']);

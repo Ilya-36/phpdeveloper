@@ -10,6 +10,6 @@ class ApartmentRepositoryProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->app->register(ApartmentRepositoryInterface::class, DbApartmentRepository::class);
+//        $this->app->bind(ApartmentRepositoryInterface::class, DbApartmentRepository::class);
     }
 }

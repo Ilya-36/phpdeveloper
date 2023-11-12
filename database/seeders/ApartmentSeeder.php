@@ -21,12 +21,12 @@ class ApartmentSeeder extends Seeder
 
         foreach ($rows as $row) {
             DB::table('apartment')->insert([
-                'Name'      =>  $row[0],
-                'Price'     =>  $row[1],
-                'Bedrooms'  =>  $row[2],
-                'Bathrooms' =>  $row[3],
-                'Storeys'   =>  $row[4],
-                'Garages'   =>  $row[5],
+                'name'      =>  $row[0],
+                'price'     =>  $row[1],
+                'bedrooms'  =>  $row[2],
+                'bathrooms' =>  $row[3],
+                'storeys'   =>  $row[4],
+                'garages'   =>  $row[5],
                 'created_at'    =>  Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at'    =>  Carbon::now()->format('Y-m-d H:i:s'),
             ]);
