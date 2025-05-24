@@ -17,4 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/apartment', [App\Http\Controllers\ApartmentController::class, 'index']);
+Route::get('/apartments', [App\Http\Controllers\ApartmentController::class, 'index']);
+
+Route::get('/kek', function () {
+    dd("lol");
+});
